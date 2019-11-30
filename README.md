@@ -16,7 +16,9 @@ Basically, if we have chips capable of outputting, referred to as `handlers` fro
 ### Writing data handlers
 Base it off the example data handler `airportData`. The idea of it is the data handler takes the HTTP body content from the REST API and boils it down into which LEDs need to which color.
 ### The main loop
-Base it off the example sketch in the main folder. `setup()` needs to call `initializeHardware();`. Also connect to your wifi network so we can make HTTP requests to the API. The rest of the stuff in the loop is pretty self explanatory from the example.
+Base it off the example sketch in the main folder. `setup()` needs to call `initializeHardware();`. Also connect to your wifi network so we can make HTTP requests to the API. The rest of the stuff in the loop is pretty self explanatory from the example. The `src` folder needs to be named that and then dropped in the folder of the arduino sketch.
 
 ## Tips
 * Get the NodeMCU version of the ESP8266 instead of the smaller ESP-01 unless space is really an issue. So much easier to deal with, plus you get a few pins for GPIO directly off the microcontroller. Plus none of that getting an arduino to work as a USB to serial adapter and all that nonsense. 
+* If you're using addressable LEDs, watch out for the voltage stuff, as the WS2812 takes 5v, but the ESP8266 works off 3.3v. I got away with powering the strip at 5v, but signaling at 3.3v, but your mileage may vary.
+
