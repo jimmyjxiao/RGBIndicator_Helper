@@ -2,6 +2,9 @@
 
 This is a framework that helps you create solutions that use a lot of RGB LEDs that are used to indicate statuses of various things pulled from web APIs. It's written for ESP8266, but I don't imagine it would be especially hard to adapt to other microcontroller platforms, especially if they're arduino based. It's got some nice abstraction logic to help handle multiple port expanders (MCP23017) and addressable LEDs (WS2812).
 
+# Example Project
+[Airport Flight Conditions Map](https://jimmyxiao.me/guides/technical/diy/2019/11/29/metar-map)
+
 ## Usage
 ### Understanding virtual pin numbers
 #### Reasoning
