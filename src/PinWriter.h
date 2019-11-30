@@ -17,8 +17,17 @@ namespace pinWriters
 	};
 	class NativeHandler : public PinHandler
 	{
+	private:
+		static void initializePin(unsigned char pin);
 	public:
-		NativeHandler();
+		template <size_t N>
+		NativeHandler(unsigned char(&usedPins)[N])
+		{
+			for (unsigned char p : usedPins)
+			{
+				initializePin(p);
+			}
+		}
 		void writeLiteralPin(bool val, unsigned char pin) override;
 	};
 }

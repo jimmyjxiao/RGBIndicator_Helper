@@ -44,16 +44,10 @@ void MCPHandler::writeLiteralPin(bool val, unsigned char pin) {
 	mcp.digitalWrite(pin, !val);
 }
 
-NativeHandler::NativeHandler() {
-	pinMode(14, OUTPUT);
-	pinMode(0, OUTPUT);
-	pinMode(2, OUTPUT);
-	//    pinMode(3, OUTPUT);
-	//    pinMode(4,OUTPUT);
-	//    pinMode(5,OUTPUT);
-	//    pinMode(6,OUTPUT);
-	//    pinMode(7,OUTPUT);
-	//    pinMode(8,OUTPUT);
+
+void pinWriters::NativeHandler::initializePin(unsigned char pin)
+{
+	pinMode(pin, OUTPUT);
 }
 
 void NativeHandler::writeLiteralPin(bool val, unsigned char pin) {
