@@ -55,5 +55,5 @@ void NativeHandler::writeLiteralPin(bool val, unsigned char pin) {
 	Serial.print(pin);
 	Serial.print(" value: ");
 	Serial.print(val);
-	digitalWrite(pin, !val);
+	digitalWrite(pin, val);
 }
